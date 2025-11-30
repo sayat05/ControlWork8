@@ -8,14 +8,16 @@ namespace Library_Mvc.Services;
 
 public class BookService(IBookRepository bookRepository, ICategoryRepositories categoryRepository, IStatusBookRepository statusBookRepository) : IBookService
 {
-    public async Task<IEnumerable<BookCardDto>> GetAllBooksAsync()
+    public async Task<IEnumerable<BookStatusDto>> GetAllBooksAsync()
     {
         var books = await bookRepository.GetAll();
-        return books.Select(b => new BookCardDto
+        var statusBooks1 = (await statusBookRepository.GetAll()).ToDictionary(s => s.BookId, s => s.Status);
+        return books.Select(b => new BookStatusDto
         {
             Author = b.Author,
             Name = b.Name,
-            RefImg = b.RefImg
+            RefImg = b.RefImg,
+            Status = statusBooks1.TryGetValue(b.Id, out var s) ? s.ToString() : "Не найдено"
         }).ToList();
     }
 

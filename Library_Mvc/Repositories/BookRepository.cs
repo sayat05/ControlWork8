@@ -66,6 +66,7 @@ public class BookRepository(IDbConnection connection) : IBookRepository
                   @description, 
                   @dateAdded,
                   @categoryId)
+                  returning id;
                   """;
         book.DateAdded = DateTime.Now;
 
