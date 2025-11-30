@@ -15,7 +15,7 @@ public interface IBookService
          b - сдать книгу
     */
 
-    Task<IEnumerable<BookCardDto>> GetAllBooksAsync();
+    Task<IEnumerable<BookStatusDto>> GetAllBooksAsync();
     Task<BookDetailDto?> GetBookByIdAsync(long id);
     Task<BookStatusDto> AddBookAsync(BookAddDto bookAddDto);
     Task<BookStatusDto> IssuedBook(long id);
