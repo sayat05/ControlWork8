@@ -1,0 +1,14 @@
+@model Library_Mvc.Models.User
+
+<h2>Регистрация</h2>
+<form asp-action="Register" method="post">
+    <label>Имя:</label>
+    <input asp-for="Name" />
+    <label>Фамилия:</label>
+    <input asp-for="Lastname" />
+    <label>Email:</label>
+    <input asp-for="Email" />
+    <label>Телефон:</label>
+    <input asp-for="PhoneNumber" />
+    <button type="submit">Зарегистрироваться</button>
+</form>
