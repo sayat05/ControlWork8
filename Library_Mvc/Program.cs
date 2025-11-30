@@ -1,4 +1,11 @@
+using System.Data;
+using Npgsql;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddScoped<IDbConnection, NpgsqlConnection>(
+    _ => new NpgsqlConnection(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 
 builder.Services.AddControllersWithViews();
 
@@ -10,15 +17,11 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-app.UseHttpsRedirection();
-app.UseStaticFiles();
 
-app.UseRouting();
 
-app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Library}/{action=Index}/{id?}");
 
 app.Run();
