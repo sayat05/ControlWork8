@@ -9,5 +9,5 @@ public class Book
     public DateTime CreateDate { get; set; }
     public string? Description { get; set; }
     public DateTime DateAdded { get; set; }
-    public int CategoryId { get; set; }
+    public long CategoryId { get; set; }
 }
