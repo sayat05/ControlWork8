@@ -9,7 +9,7 @@ namespace Library_Mvc.Controllers;
 public class LibraryController(BookService service) : ControllerBase
 {
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<BookCardDto>>> GetAllAsync()
+    public async Task<ActionResult<IEnumerable<BookStatusDto>>> GetAllAsync()
     {
         return Ok(await service.GetAllBooksAsync());
     }
@@ -44,6 +44,4 @@ public class LibraryController(BookService service) : ControllerBase
         await service.Delete(id);
         return NoContent();
     }
-
-
 }

@@ -1,8 +1,10 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+@foreach (var book in Model)
+{
+    <div class="card">
+        <img src="@book.RefImg" alt="@book.Name" />
+        <h3>@book.Name</h3>
+        <p>@book.Author</p>
+        <p>Статус: @book.Status</p>
+        <a asp-controller="Books" asp-action="Details" asp-route-id="@book.Id">Подробнее</a>
+    </div>
 }
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
