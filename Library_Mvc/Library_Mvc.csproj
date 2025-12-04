@@ -13,5 +13,23 @@
         <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.6.2" />
         <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.6.2" />
     </ItemGroup>
+
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Views\Books\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Books\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Categories\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Home\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Shared\_Layout.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Users\Profile.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Users\Register.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\_ViewImports.cshtml" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <Folder Include="Controllers\" />
+      <Folder Include="wwwroot\" />
+    </ItemGroup>
     
 </Project>
