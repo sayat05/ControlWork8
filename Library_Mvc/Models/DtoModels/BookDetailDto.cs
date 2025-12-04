@@ -12,5 +12,6 @@ public class BookDetailDto
     public string? Description { get; set; }
     public DateTime CreatedAt { get; set; }
     public required string CategoryName { get; set; }
+    public required int CategoryId { get; set; }
     public required string Status { get; set; }
 }
