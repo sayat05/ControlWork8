@@ -14,8 +14,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IBookRepository, BookRepository>();
 builder.Services.AddScoped<IBookService, BookService>();
 builder.Services.AddScoped<ICategoryRepositories, CategoryRepository>();
-builder.Services.AddScoped<IStatusBookRepository, StatusBookRepository>();
-builder.Services.AddScoped<ILibraryUserRepository, LibraryUserRepository>();
+builder.Services.AddScoped<IBorrowedBookRepository, BorrowedBookRepository>();
 
 var app = builder.Build();
 
