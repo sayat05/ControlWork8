@@ -6,7 +6,7 @@ namespace Library_Mvc.PatternState.Factory;
 
 public static class StateFactory
 {
-    public static IBookState FromStatus(Statuses status) =>
+    public static BookState FromStatus(Statuses status) =>
         status switch
         {
             Statuses.Issued => new IssuedState(),
