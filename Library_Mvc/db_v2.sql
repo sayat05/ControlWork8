@@ -19,7 +19,7 @@ create table books
     name            varchar   not null,
     author          varchar   not null,
     ref_img         varchar   not null,
-    year_of_release timestamp not null,
+    year_of_release int not null,
     description     varchar,
     created_at      timestamp not null default current_timestamp,
     category_id     int       not null references categories (id) on delete cascade
