@@ -5,6 +5,6 @@ namespace Library_Mvc.Interfaces;
 
 public interface IUserRepository
 {
-    Task<long> Create(UserCreateDto userCreateDto);
-    Task<User?> GetByEmail(string email);
+    Task<long> CreateAsync(UserCreateDto userCreateDto);
+    Task<User?> GetByEmailAsync(string email);
 }
