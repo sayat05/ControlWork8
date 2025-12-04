@@ -2,12 +2,26 @@ using Library_Mvc.PatternState.ConcreteStates;
 using Library_Mvc.PatternState.InterfaceState;
 
 namespace Library_Mvc.PatternState.ContextModel;
-public class BookStatusContext(bool isBorrowed)
+public class BookStatusContext(string status)
 {
-    private readonly BookState _state = 
-        isBorrowed ? new IssuedState() : new InStockState();
+    private BookState State { get; set; } = status switch
+    {
+        "Выдана" => new IssuedState(),
+        _ => new InStockState()
+    };
 
-    public string GetStatus() => _state.Name;
+    public string GetStatus() => State.Name;
 
-    public bool CanBorrow() => _state.CanBorrow();
+    public bool CanBorrow() => State.CanBorrow();
+
+    public void SetIssued()
+    {
+        State = new IssuedState();
+    }
+
+    public void SetInStock()
+    {
+        State = new InStockState();
+    }
+    
 }
