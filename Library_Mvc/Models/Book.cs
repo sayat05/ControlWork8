@@ -6,8 +6,8 @@ public class Book
     public required string Name { get; set; }
     public required string Author { get; set; }
     public required string RefImg { get; set; }
-    public DateTime CreateDate { get; set; }
+    public int YearOfRelease { get; set; }
     public string? Description { get; set; }
-    public DateTime DateAdded { get; set; }
+    public DateTime CreatedAt { get; set; }
     public long CategoryId { get; set; }
 }
