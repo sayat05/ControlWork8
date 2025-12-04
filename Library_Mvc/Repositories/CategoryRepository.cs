@@ -28,7 +28,7 @@ public class CategoryRepository(IDbConnection connection) : ICategoryRepositorie
     public Task Add(Category category)
     {
         var sql = """
-                  insert into categories(name)
+                  insert into categories(id, name)
                   values (@id, @name)
                   """;
         return connection.ExecuteAsync(sql, new

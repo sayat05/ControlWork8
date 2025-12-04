@@ -1,14 +1,13 @@
-using Library_Mvc.Models;
 using Library_Mvc.Models.DtoModels;
 
 namespace Library_Mvc.Interfaces;
 
 public interface IBorrowedBookRepository
 {
-    Task<bool> IsUserHasLimit(long userId);
-    Task<bool> IsBookBorrowed(long bookId);
-    Task Borrow(long userId, long bookId);
-    Task Return(long borrowId);
-    Task<IEnumerable<BorrowedBook>> GetAll();
-    Task<IEnumerable<BookCardDto>> GetUserBorrowedBooks(long userId);
+    Task<bool> IsUserHasLimitAsync(long userId);
+    Task<bool> IsBookBorrowedAsync(long bookId);
+    Task BorrowAsync(long userId, long bookId);
+    Task ReturnAsync(long borrowId);
+    Task<IEnumerable<BorrowedBookDto>> GetAllAsync();
+    Task<IEnumerable<BookCardDto>> GetUserBorrowedBooksAsync(long userId);
 }
